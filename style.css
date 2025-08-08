@@ -1,0 +1,230 @@
+/* Root variables for light & dark mode */
+:root {
+  --light-bg: #f4f7fa;
+  --light-card: #ffffff;
+  --dark-bg: #1e1e2f;
+  --dark-card: #2c2c3e;
+  --text-color: #333;
+  --dark-text: #eee;
+  --accent-color: #4f46e5;
+  --correct: #28a745;
+  --wrong: #dc3545;
+  --warning: #ffb703;
+  --transition: 0.3s ease;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+body.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.quiz-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: var(--light-card);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+body.dark .quiz-container {
+  background-color: var(--dark-card);
+  box-shadow: none;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.quiz-header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.quiz-header select,
+.quiz-header button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.quiz-header button:hover,
+.quiz-header select:hover {
+  background-color: #3730a3;
+}
+
+#quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#question {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.options-container button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-size: 16px;
+  background-color: #e0e7ff;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+}
+
+body.dark .options-container button {
+  background-color: #3b3b5c;
+  color: var(--dark-text);
+}
+
+.options-container button:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.options-container button.correct {
+  background-color: var(--correct) !important;
+  color: #fff;
+}
+
+.options-container button.wrong {
+  background-color: var(--wrong) !important;
+  color: #fff;
+}
+
+.feedback-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--warning);
+  height: 24px;
+}
+
+.quiz-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#nextBtn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#nextBtn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+#progressBar {
+  height: 10px;
+  background-color: #d1d5db;
+  border-radius: 6px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+#progress {
+  height: 100%;
+  width: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+#resultScreen {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#resultScreen h2 {
+  font-size: 26px;
+  color: var(--accent-color);
+}
+
+#restartBtn {
+  background-color: #10b981;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#restartBtn:hover {
+  background-color: #059669;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 20px;
+  }
+
+  .quiz-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .quiz-header h1 {
+    font-size: 22px;
+  }
+
+  .options-container button {
+    font-size: 15px;
+  }
+
+  #question {
+    font-size: 18px;
+  }
+}
+body {
+  background-image: url('bg.jpg'); /* or use a full URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="quiz-container">
+    <header class="quiz-header">
+      <h1>🧠 Quiz Master</h1>
+      <div class="header-controls">
+        <button id="dailyBtn">📅 Daily Challenge</button>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button id="themeToggle">🌙</button>
+      </div>
+    </header>
+
+    <div id="quiz" class="quiz-box">
+      <div class="quiz-meta">
+        <p id="questionCount">Question 1 of 10</p>
+        <div id="timer">⏱️ 15s</div>
+      </div>
+
+      <div id="question" class="question-text">Loading question...</div>
+
+      <div id="options" class="options-container">
+        <!-- Options will be inserted dynamically -->
+      </div>
+
+      <div id="feedback" class="feedback-text"></div>
+
+      <div class="quiz-controls">
+        <button id="nextBtn" disabled>Next ➡️</button>
+      </div>
+
+      <div id="progressBar" class="progress-bar">
+        <div id="progress" class="progress"></div>
+      </div>
+    </div>
+
+   <div id="resultScreen" class="hidden">
+  <h2>🎉 Quiz Completed!</h2>
+  <p id="scoreSummary"></p>
+  <canvas id="scoreChart" width="400" height="200" style="margin-top: 30px;"></canvas>
+  <button id="restartBtn">🔁 Restart Quiz</button>
+</div>
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+</body>
+</html>
